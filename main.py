@@ -25,6 +25,8 @@ db = SQLAlchemy(app)
 login_manager = LoginManager()
 login_manager.init_app(app)
 
+print("test")
+
 gravatar = Gravatar(app,
                     size=100,
                     rating='g',
