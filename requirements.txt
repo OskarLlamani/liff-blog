@@ -20,3 +20,4 @@ visitor
 Werkzeug
 WTForms
 gunicorn==20.1.0
+email-validator
