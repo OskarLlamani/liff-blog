@@ -22,3 +22,4 @@ WTForms
 gunicorn==20.1.0
 email-validator
 sqlalchemy-utils
+psycopg2
