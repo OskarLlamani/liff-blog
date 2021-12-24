@@ -19,7 +19,14 @@ Bootstrap(app)
 
 ##CONNECT TO DB
 #db_uri = 'sqlite:///blog.db'
-db_uri = os.environ.get("DATABASE_URL", "sqlite:///blog.db") #heroku:postgre, local:sqlite
+#db_uri = os.environ.get("DATABASE_URL", "sqlite:///blog.db") #heroku:postgre, local:sqlite
+#if os.environ.get("DATABASE_URL"):
+#    db_uri = "postgresql://jatljwtsniefuc:f522f2d669997bcee5e882f453a9c9042dbe61a594af4a290acc7287c189b2e0@ec2-34-254-120-2.eu-west-1.compute.amazonaws.com:5432/d8r1lk91il205o"
+#else:
+#    db_uri = 'sqlite:///blog.db'
+
+db_uri = "postgresql://jatljwtsniefuc:f522f2d669997bcee5e882f453a9c9042dbe61a594af4a290acc7287c189b2e0"
+
 app.config['SQLALCHEMY_DATABASE_URI'] = db_uri
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
