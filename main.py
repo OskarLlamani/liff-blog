@@ -77,9 +77,9 @@ class Comment(db.Model):
     post = relationship("BlogPost", back_populates="comments")
 
 
-if not database_exists(db_uri):
-    db.create_all()
-
+#if not database_exists(db_uri):
+#    db.create_all()
+db.create_all()
 
 # User.__table__.create(db.session.bind)
 
