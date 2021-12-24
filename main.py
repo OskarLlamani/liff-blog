@@ -13,13 +13,13 @@ from sqlalchemy_utils.functions import database_exists
 import os
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = os.environ.get("SECRET_KEY")
+app.config['SECRET_KEY'] = os.environ.get("SECRET_KEY", "shdfghusdfgih43dfg3524k42my")
 ckeditor = CKEditor(app)
 Bootstrap(app)
 
 ##CONNECT TO DB
 #db_uri = 'sqlite:///blog.db'
-db_uri = os.environ.get("DATABASE_URL")
+db_uri = os.environ.get("DATABASE_URL", "sqlite:///blog.db") #heroku:postgre, local:sqlite
 app.config['SQLALCHEMY_DATABASE_URI'] = db_uri
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
